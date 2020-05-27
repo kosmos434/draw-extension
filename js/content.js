@@ -45,13 +45,16 @@ function drawTime(size, color) {
     }
     
     function canvasResize() {
-        console.log('resized the canvas');
+        // console.log('resized the 🖼️');
         canvas.width = document.body.clientWidth;
         canvas.height = document.body.clientHeight;
     }
 
 }
 
+/**
+ * simple and ugly reset
+ */
 function clearIt(){
     const canvas = document.querySelector('canvas');
     canvas.remove();
@@ -62,7 +65,7 @@ function clearIt(){
  * listener for popup.html clicks
  */
 browser.runtime.onMessage.addListener((message) => {
-    console.log("🖋️ content.js is hearing a " + message.msg);
+    // console.log("👂 content.js is hearing a " + message.msg);
     switch (message.msg) {
         case "pencil":
             drawTime(2, "black");

@@ -4,21 +4,20 @@
   "name": "Easy Draw",
   "version": "1.0",
 
-  "description": "Draw on your screen",
+  "description": "🎨 Draw on your screen",
+  "homepage_url": "https://github.com/kosmos434/draw-extension",
 
   "icons": {
-    "48": "icons/pencil-48.png"
+    "48": "img/pencil-48.png"
   },
 
   "permissions": [
-    "tabs",
-    "activeTab",
-    "<all_urls>"
+    "activeTab"
   ],
 
   "browser_action": {
-    "default_icon": "icons/pencil-32.png",
-    "default_title": "Draw it!",
+    "default_icon": "img/pencil-32.png",
+    "default_title": "Easy Draw",
     "default_popup": "popup.html",
     "browser_style": true
   }
