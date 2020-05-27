@@ -1,0 +1,12 @@
+*, *:before, *:after {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+canvas {
+    background-color: rebeccapurple;
+}
