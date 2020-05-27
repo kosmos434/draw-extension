@@ -1,4 +1,4 @@
-function drawTime() {
+function drawTime(size, color) {
     
     createCanvas();
     const canvas = document.querySelector('canvas');
@@ -13,15 +13,13 @@ function drawTime() {
 
     let isDrawing = false;
     let buttonHeld = null;
-    let theyInputColor = null;
-    let theyInputWidth = null;
     
     
     function start({button: b}) {
         buttonHeld = b;
         isDrawing = true;
-        ctx.strokeStyle = theyInputColor || "black";
-        ctx.lineWidth = theyInputWidth || 5;
+        ctx.strokeStyle = color || "black";
+        ctx.lineWidth = size || 5;
         ctx.beginPath();
     }
     
@@ -54,14 +52,32 @@ function drawTime() {
 
 }
 
+function clearIt(){
+    const canvas = document.querySelector('canvas');
+    canvas.remove();
+}
+
 
 /**
  * listener for popup.html clicks
  */
 browser.runtime.onMessage.addListener((message) => {
     console.log("🖋️ content.js is hearing a " + message.msg);
-    if (message.msg === "crayon") {
-        drawTime();
+    switch (message.msg) {
+        case "pencil":
+            drawTime(2, "black");
+            break;
+        case "paintbrush":
+            drawTime(8, "red");
+            break;
+        case "crayon":
+            drawTime(4, "purple");
+            break;
+        case "eraser":
+            clearIt();
+            break;
+        default:
+            break;
     }
 });
 
